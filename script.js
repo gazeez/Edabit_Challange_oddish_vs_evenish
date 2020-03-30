@@ -1,27 +1,23 @@
+// referencing https://codegolf.stackexchange.com/questions/71877/remove-leading-and-trailing-zeroes
+// https://flaviocopes.com/how-to-trim-leading-zero-number/
 
-function findOddishorEvenish(num){
-
-   
-    var num = document.getElementById('num').value;
-    var sum = 0;
-// https://stackoverflow.com/questions/38334652/sum-all-the-digits-of-a-number-javascript
-// to find the sum of all the digits of a number
-
-    while (num) {
-        sum += num % 10;
-        num = Math.floor(num / 10);
+function removeLeadingTrailing(){
+ 
+    var leading = /^[0]+/;
+    var trailing = /[0]+$/;
+    var trailingDecimal = /[.]$/;
+	
+    var before = '';
+    var after = '';
+ 
+    before = document.forms[0].text1.value;
+	
+    after = before.replace(leading,'');  // Remove leading 0's
+    if (after.indexOf('.')>-1){
+        after = after.replace(trailing,'');  // Remove trailing 0's
     }
-
-    //https://www.tutorialsmade.com/javascript-find-odd-even-number/
-    // Utilized the link to find how to call functions to determine odd or even
-    // manipulated it to get my evenish or oddish
-
-    if ( sum % 2 == 0) 
-    {
-        document.getElementById('result').innerHTML = 'The sum of the digits is  ' + sum + ' therefore Evenish';
-    }
-    else
-    {
-        document.getElementById('result').innerHTML = 'The sum of the digits is  ' + sum + ' therefore Oddish';
-    }
+    after = after.replace(trailingDecimal,'');  // Remove trailing decimal when it the input number is number.0 example 2.0, 2.00 to return 2
+ 
+    document.forms[0].text2.value = after;
+	
 }
