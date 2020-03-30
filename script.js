@@ -18,10 +18,10 @@ function findOddishorEvenish(num){
 
     if ( sum % 2 == 0) 
     {
-        document.getElementById('result').innerHTML = sum + ' is a Evenish';
+        document.getElementById('result').innerHTML = 'The sum of the digits is  ' + sum + ' therefore Evenish';
     }
     else
     {
-        document.getElementById('result').innerHTML = sum + ' is a Oddish';
+        document.getElementById('result').innerHTML = 'The sum of the digits is  ' + sum + ' therefore Oddish';
     }
 }
