@@ -25,4 +25,3 @@ function findOddishorEvenish(num){
         document.getElementById('result').innerHTML = 'The sum of the digits is  ' + sum + ' therefore Oddish';
     }
 }
-
